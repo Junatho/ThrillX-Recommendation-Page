@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Allow reads for all collections
+    match /{document=**} {
+      allow read: if true;
+    }
+
+    // Allow writes only on these collections
+    match /user_logs/{docId} {
+      allow write: if true;
+    }
+  }
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThrillX Recommendation Page</title>
+	    <link rel="icon" type="image/x-icon" href="icons/ThrillX Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script type="module" src="./config.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./recom.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .font-bebas {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .font-roboto {
+            font-family: 'Roboto', sans-serif;
+        }
+        .font-roboto-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        .animate-breathe {
+            animation: breathe 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col font-roboto">
+    <nav id="navbar" class="p-4 fixed top-0 w-full z-30 bg-[#000000]">
+        <div class="w-full px-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <a href="index.html">
+                    <img src="icons/ThrillX Logo.png" alt="Logo" class="h-16">
+                </a>
+            </div>
+            <button id="helpBtn" class="bg-white text-gray-500 hover:bg-[#6b0c0c] hover:text-white uppercase py-1 px-3 rounded-lg text-xl font-roboto-mono">HELP</button>
+        </div>
+    </nav>
+	
+	<button id="scrollToTopButton"
+		class="fixed bottom-6 right-4 bg-[#9A040F] hover:bg-red-900 text-white rounded-md px-3 py-2 shadow-lg hidden transition-opacity duration-300 ease-in-out opacity-0 hover:opacity-100 z-30">
+		<i class="fas fa-arrow-up"></i>
+	</button>
+
+<!-- Landing -->
+<section class="relative bg-cover bg-center h-[780px]">
+        <div id="landingBG" class="absolute inset-0 bg-cover bg-top" style="background-image: url('icons/landing.jpg')"></div>    
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center text-white px-4 mt-16">
+                <div class="text-center text-white pt-24">
+                    <h1 class="text-6xl sm:text-6xl md:text-7xl lg:text-8xl font-normal font-bebas tracking-wide">READY TO TRY 
+                        <br><span class="text-[#9A040F]">SOMETHING NEW?</span>
+                    </h1>
+                    <p class="pb-12 text-xs sm:text-md md:text-lg lg:text-xl mt-4 font-roboto-mono tracking-widest text-xl">FIND WHAT'S KEEPING YOUR ADRENALINE UP</p>
+                </div>
+                
+                <div id="scrollDownBtn" class="flex flex-col items-center justify-center pt-24 cursor-pointer animate-breathe transition-colors hover:text-[#9A040F]">
+                    <span class="text-md sm:text-lg font-roboto-mono font-bold uppercase mb-2">SCROLL OR CLICK TO CONTINUE</span>
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- Preference Form -->
+<section id="preference-form" class="bg-white relative pb-10">
+  <div class="container mx-auto pt-12 pb-4">
+    
+    <div class="mb-12">
+        <h1 class="text-center text-xl sm:text-2xl text-[#9A040F] font-bold p-4 pb-6 font-roboto-mono">
+            Where do you like to go?
+        </h1>
+
+        <div class="px-4 sm:px-6 md:px-8 lg:px-16">
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="beach">
+                    <span class="text-sm sm:text-base font-medium text-center">Beaches</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="island">
+                    <span class="text-sm sm:text-base font-medium text-center">Islands</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="river">
+                    <span class="text-sm sm:text-base font-medium text-center">Rivers</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="waterfall">
+                    <span class="text-sm sm:text-base font-medium text-center">Waterfalls</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="lake">
+                    <span class="text-sm sm:text-base font-medium text-center">Lakes</span>
+                </div>
+                
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="mountain">
+                    <span class="text-sm sm:text-base font-medium text-center">Mountains</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="volcano,volcanic">
+                    <span class="text-sm sm:text-base font-medium text-center">Volcanoes</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="jungle">
+                    <span class="text-sm sm:text-base font-medium text-center">Jungles</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="forest">
+                    <span class="text-sm sm:text-base font-medium text-center">Forests</span>
+                </div>
+
+                 <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="cave">
+                    <span class="text-sm sm:text-base font-medium text-center">Caves</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="canyon">
+                    <span class="text-sm sm:text-base font-medium text-center">Canyons</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="ocean">
+                    <span class="text-sm sm:text-base font-medium text-center">Oceans</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-center text-xl sm:text-2xl text-[#9A040F] font-bold p-4 pb-6 font-roboto-mono">
+            What type of activity do you like to do?
+        </h1>
+
+        <div class="px-4 sm:px-6 md:px-8 lg:px-16 pb-6">
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="atv">
+                    <span class="text-sm sm:text-base font-medium text-center">ATV Rides</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="ferry">
+                    <span class="text-sm sm:text-base font-medium text-center">Ferries</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="boat">
+                    <span class="text-sm sm:text-base font-medium text-center">Boats</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="rafting">
+                    <span class="text-sm sm:text-base font-medium text-center">Rafting</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="tubing">
+                    <span class="text-sm sm:text-base font-medium text-center">River Tubing</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="hiking">
+                    <span class="text-sm sm:text-base font-medium text-center">Hiking</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="trekking">
+                    <span class="text-sm sm:text-base font-medium text-center">Trekking</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="canyoning">
+                    <span class="text-sm sm:text-base font-medium text-center">Canyoning</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="snorkeling">
+                    <span class="text-sm sm:text-base font-medium text-center">Snorkeling</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="diving">
+                    <span class="text-sm sm:text-base font-medium text-center">Diving</span>
+                </div>
+
+                 <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="surfing">
+                    <span class="text-sm sm:text-base font-medium text-center">Surfing</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="jet ski,jetski">
+                    <span class="text-sm sm:text-base font-medium text-center">Jetski Rides</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="temple">
+                    <span class="text-sm sm:text-base font-medium text-center">Temples</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="culture">
+                    <span class="text-sm sm:text-base font-medium text-center">Cultural Tours</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="bike">
+                    <span class="text-sm sm:text-base font-medium text-center">Biking</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="city">
+                    <span class="text-sm sm:text-base font-medium text-center">City Tours</span>
+                </div>
+
+                <div class="pref-card inline-flex items-center justify-center px-6 py-3 bg-gray-50 border border-gray shadow-sm rounded-lg cursor-pointer hover:bg-red-50 hover:border-red-200 transition-all duration-300" 
+                     data-category="kecak fire">
+                    <span class="text-sm sm:text-base font-medium text-center">Kecak Fire</span>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-16">
+                <button id="submit-preferences" class="bg-[#9A040F] font-roboto-mono hover:bg-[#B70A18] text-white font-semibold py-3 px-10 rounded-lg text-md sm:text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    FIND MY ADVENTURE
+                </button>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results (populated by index.js) -->
+<section id="selected-output" class="bg-gray-50 py-10 hidden">
+  <div class="container mx-auto">
+    <h1 class="relative flex items-center justify-center text-center font-roboto-mono font-bold tracking-wide sm:text-2xl md:text-3xl lg:text-4xl font-barlow text-[#9A040F] p-4 
+                before:content-[''] before:flex-grow before:h-[2px] before:bg-[#9A040F] before:mx-4 before:max-w-[200px] md:before:max-w-[600px] 
+                after:content-[''] after:flex-grow after:h-[2px] after:bg-[#9A040F] after:mx-4 after:max-w-[200px] md:after:max-w-[600px]">
+        Recommended Activities
+    </h1>
+    <div id="loading" class="text-center py-12 text-gray-500 hidden">
+        <i class="fas fa-spinner fa-spin text-3xl"></i>
+        <p class="mt-2">Finding activities...</p>
+    </div>
+
+    <div id="results-list" class="pt-4 p-4 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    </div>
+</section>
+
+<!-- Activity Cards Container -->
+<div id="activities-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4"></div>
+
+<div id="activityModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50 px-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-3xl h-[85vh] flex flex-col relative overflow-hidden animate-fade-in">
+            <div class="pl-6 pt-6 p-4 border-b border-gray-200 flex justify-between items-start bg-gray-50">
+                <div class="pr-8">
+                    <h2 id="modalTitle" class="text-2xl sm:text-3xl font-bold text-[#9A040F] leading-tight font-bebas tracking-wider"></h2>
+                    <div id="modalSubtitle" class="flex flex-wrap gap-3 mt-2 text-sm text-gray-600"></div>
+                </div>
+            </div>
+
+            <div id="modalContent" class="p-6 overflow-y-auto flex-grow space-y-6">
+                </div>
+            
+            <div class="p-4 border-t border-gray-200 bg-gray-50 text-right">
+                 <button id="closeModalBtn" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-6 rounded transition">Close</button>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="bg-[#212121] text-white py-6 px-6 sm:px-12">
+    <div class="w-full px-4 flex flex-col md:flex-row items-start space-y-6 md:space-y-0">
+            <div class="flex flex-col items-start space-y-2 sm:w-1/2">
+                <img src="icons/ThrillX Logo.png" alt="Logo" class="h-14 sm:h-16">
+                <p class="text-sm sm:text-base text-[#FFFFFF] font-roboto leading-tight pt-2">
+                    What is THRILLX?
+                </p>
+                <p class="text-xs sm:text-sm md:text-sm text-[#FFFFFF] font-roboto leading-tight pb-4">
+                    THRILLX is a platform for users to book extreme sports and attractions in Indonesia. This recommendation page
+                    allows you to select your unique preferences and the website will display relevant activities based on your unique interests.
+                </p>
+            </div>    
+            
+        <div class="pb-8 md:pl-12 pt-2 flex flex-col items-start sm:items-start text-left sm:text-left">
+            <h2 class=" pb-4 font-roboto-mono text-xl sm:text-2xl tracking uppercase text-[#FFFFFF]">FOR MORE INFORMATION</h2>
+            <div class="flex gap-6">
+                <a href="https://wa.me/6208158862039" target="_blank">
+                    <img src="icons/logo-whatsapp.png" alt="WhatsApp" class="h-8 w-8 sm:h-12 sm:w-12">
+                </a>
+                <a href="mailto:01082220019@student.uph.edu">
+                    <img src="icons/logo-outlook.png" alt="Outlook" class="h-8 w-8 sm:h-12 sm:w-12">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
